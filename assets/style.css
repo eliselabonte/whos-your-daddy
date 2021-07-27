@@ -6,3 +6,67 @@
     --head-font: 'Tourney', cursive;
     --body-font: 'Nixie One', cursive;
 }
+
+body    {
+    height:100vh;
+    background-color: var(--blue);
+}
+
+header    {
+    background-color: var(--yellow);
+    padding: 5px;
+    top:0px;
+    left:0px;
+    width:100%;
+    height: 15vh;
+    position:fixed;
+}
+
+h1    {
+    font-size:39px;
+    font-family: var(--head-font);
+    position:fixed;
+    top:0px;
+    left:5px;
+}
+
+h2, h3, p  {
+    font-family: var(--body-font);
+}
+
+h2.title-description  {
+    font-size:20px;
+    text-align: right;
+    position:fixed;
+    top:80px;
+    right:5px;
+}
+
+h2.favorites    {
+    text-align: center;
+    background-color: var(--orange);
+}
+
+div.gif-and-joke    {
+    height:100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+iframe.random-dad-image    {
+    height:auto;
+    width:100vw;
+    margin-top:15vh;
+}
+
+p.joke-display  {
+    background-color: white;
+    width:100%;
+    padding:5px;
+}
+
+div.favorites-list  {
+    padding:5px;
+}
