@@ -1,0 +1,8 @@
+:root   {
+    --blue: rgb(186, 247, 235);
+    --yellow: rgb(251, 220, 105);
+    --orange: rgb(248, 137, 67);
+
+    --head-font: 'Tourney', cursive;
+    --body-font: 'Nixie One', cursive;
+}
