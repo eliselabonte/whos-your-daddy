@@ -15,24 +15,28 @@
     </head>
 
     <body>
-        <header>
-            <h1>Who's Your Daddy?</h1>
-            <h2 class="title-description">A Dad Joke Generator</h2>
+        <header class="columns">
+            <h1 class="column is-mobile is-half-desktop">Who's Your Daddy?</h1>
+            <h2 class="title-description column is-half-desktop">A Dad Joke Generator</h2>
         </header>
 
-        <main>
-            <div id="gifAndJoke" class="gif-and-joke card">
-                <iframe src="https://giphy.com/embed/fXTOderGCTjypOMKWN" width="480" height="480" frameBorder="0" class="random-dad-image card-image" ></iframe>
+        <main class="columns">
+            <div id="gifAndJoke" class="gif-and-joke card column is-half-tablet is-half-desktop">
+                <iframe src="https://giphy.com/embed/fXTOderGCTjypOMKWN" class="random-dad-image card-image" ></iframe>
                 <p><a href="https://giphy.com/stickers/transparent-fXTOderGCTjypOMKWN">via GIPHY</a></p>
                 <p id="jokeDisplay" class="joke-display card-content">I got laid off from the origami factory because it folded.</p>
+            
+                <button id="jokeButton" class="button">Generate Cringe</button>
             </div>
-            <section>
+
+            <section class="column is-half-tablet is-one-quarter-desktop">
                 <h2 class="favorites">Favorites</h2>
                 <div id="favoritesList" class="favorites-list breadcrumb">
-                    <h3>What do you call a fish with no eyes?</h3>
+                    <p>What do you call a fish with no eyes?</p>
                     <p>fshhhh</p>
                 </div>
             </section>
+
         </main>
 
         <script src= "./assets/script.js"></script>
