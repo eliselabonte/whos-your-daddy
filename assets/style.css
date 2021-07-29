@@ -1,8 +1,11 @@
 /* color and fonts for the entire page */
 :root   {
     --blue: rgb(186, 247, 235);
+    --dark-blue:rgb(119, 196, 212);
     --yellow: rgb(251, 220, 105);
     --orange: rgb(248, 137, 67);
+    --warm-transition:linear-gradient(270deg, rgb(251, 220, 105), rgb(248, 137, 67));
+    --cool-transition:linear-gradient(rgb(186, 247, 235), rgb(119, 196, 212));
 
     --head-font: 'Tourney', cursive;
     --body-font: 'Nixie One', cursive;
@@ -10,27 +13,32 @@
 
 body    {
     height:100vh;
-    background-color: var(--blue);
+    background: var(--cool-transition);
     overflow-x: hidden;
+    padding:5px;
+}
+
+main.columns    {
+    height:92%;
+    margin-bottom:-0.75rem;
 }
 
 /* header is top layer and unaffected by rest of page */
 header.columns    {
-    background-color: var(--yellow);
+    background: var(--warm-transition);
     padding: 5px;
-    top:0px;
-    left:0px;
-    width:100%;
+    width:101vw;
     z-index: 100;
     /* removes margins from Bulma class */
-    margin-left:0px;
+    margin-left:-1vw;
     margin-right:0px;
 }
 
 /* this is the only place that head-font is used */
-h1    {
+h1.column    {
     font-size:40px;
     font-family: var(--head-font);
+    padding:0px;
 }
 
 /* use body-font for all othere text elements */
@@ -42,8 +50,9 @@ h2, h3, p, .breadcrumb  {
 
 /* position is fixed so that it can overlap the h1 element slightly */
 h2.title-description  {
-    font-size:18px;
+    font-size:1.5rem;
     vertical-align: text-bottom;
+    text-align: right;
 }
 
 h2.favorites    {
@@ -57,17 +66,21 @@ div.gif-and-joke.card {
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
-    /* margin-bottom:10px; */
-    margin-top:155px;
-    background-color: var(--blue);
+    justify-content: space-evenly;
+    background: none;
     box-shadow: none;
+    
+    border:1px solid var(--orange);
+}
+
+section {
+    border:1px solid var(--orange);
 }
 
 /* make the imported gif the width of the page */
 iframe.random-dad-image    {
-    height:auto;
-    width:80vw;
+    height:400px;
+    width:auto;
 }
 
 p.joke-display  {
@@ -79,15 +92,16 @@ p.joke-display  {
 button.button  {
     border-radius: 10px;
     border:none;
-    background-color: var(--yellow);
+    background: var(--warm-transition);
     font-family: var(--body-font);
     margin-top:5px;
 }
 
 button:hover, button:active    {
-    background-color: var(--orange);
+    background: var(--orange);
 }
 
 div.favorites-list  {
     padding:5px;
 }
+
