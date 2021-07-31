@@ -16,6 +16,16 @@ body    {
     background: var(--cool-transition);
     overflow-x: hidden;
     padding:5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+div.welcome-card    {
+    margin-top:20px;
+    background:var(--orange);
+    height:200px;
+    width:200px;
 }
 
 main.columns    {
@@ -27,11 +37,8 @@ main.columns    {
 header.columns    {
     background: var(--warm-transition);
     padding: 5px;
-    width:101vw;
+    width:100vw;
     z-index: 100;
-    /* removes margins from Bulma class */
-    margin-left:-1vw;
-    margin-right:0px;
 }
 
 /* this is the only place that head-font is used */
@@ -103,5 +110,9 @@ button:hover, button:active    {
 
 div.favorites-list  {
     padding:5px;
+}
+
+main.columns.no-display  {
+    display: none;
 }
 

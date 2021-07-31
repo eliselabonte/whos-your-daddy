@@ -21,9 +21,14 @@
             <h2 class="title-description column is-half-desktop">A Dad Joke Generator</h2>
         </header>
 
-        <main class="columns">
+        <div id="welcomeCard" class="welcome-card card ">
+            <p></p>
+
+        </div>
+
+        <main class="columns no-display">
             <div id="gifAndJoke" class="gif-and-joke card column is-half-tablet is-three-quarters-desktop">
-                <iframe src="https://giphy.com/embed/SoGWjjqrzaIw9cx1qM" class="random-dad-image card-image" allowFullScreen></iframe>
+                <iframe src="" id="gifDisplay" class="random-dad-image card-image" allowFullScreen></iframe>
                 <p id="jokeDisplay" class="joke-display card-content">I got laid off from the origami factory because it folded.</p>
             
                 <button id="jokeButton" class="button">Generate Cringe</button>
