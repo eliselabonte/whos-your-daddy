@@ -5,6 +5,7 @@
     --yellow: rgb(251, 220, 105);
     --orange: rgb(248, 137, 67);
     --warm-transition:linear-gradient(270deg, rgb(251, 220, 105), rgb(248, 137, 67));
+    --warm-transition-backwards:linear-gradient(90deg, rgb(251, 220, 105), rgb(248, 137, 67));
     --cool-transition:linear-gradient(rgb(186, 247, 235), rgb(119, 196, 212));
 
     --head-font: 'Tourney', cursive;
@@ -119,6 +120,7 @@ div.joke-display  {
 button.button  {
     border-radius: 10px;
     border:none;
+    box-shadow:none;
     background: var(--warm-transition);
     font-family: var(--body-font);
     margin-top:5px;
@@ -127,7 +129,7 @@ button.button  {
 }
 
 button:hover, button:active    {
-    background: var(--orange);
+    background: var(--warm-transition-backwards);
 }
 
 div.favorites-list  {
@@ -138,7 +140,7 @@ main.columns > section.no-display, main.columns > div.no-display  {
     display: none;
 }
 
-img {
+img.icon {
     height:200px;
     width:auto;
     z-index:1;
