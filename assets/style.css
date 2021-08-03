@@ -5,7 +5,6 @@
     --yellow: rgb(251, 220, 105);
     --orange: rgb(248, 137, 67);
     --warm-transition:linear-gradient(270deg, rgb(251, 220, 105), rgb(248, 137, 67));
-    --warm-transition-backwards:linear-gradient(90deg, rgb(251, 220, 105), rgb(248, 137, 67));
     --cool-transition:linear-gradient(rgb(186, 247, 235), rgb(119, 196, 212));
 
     --head-font: 'Tourney', cursive;
@@ -14,8 +13,10 @@
 
 body    {
     height:105vh;
+    width:100vw;
+    min-width: fit-content;
     background: var(--cool-transition);
-    overflow-x: hidden;
+    margin:0;
     padding:5px;
 }
 
@@ -40,8 +41,7 @@ div.welcome-card > p    {
 }
 
 main.columns    {
-    height:92%;
-    margin-bottom:-0.75rem;
+    /* margin-bottom:-0.75rem; */
     display: flex;
     /* flex-direction: column; */
     align-content: space-between;
@@ -52,7 +52,6 @@ header.columns    {
     background: var(--warm-transition);
     padding: 15px;
     z-index: 100;
-
 }
 
 /* this is the only place that head-font is used */
@@ -129,7 +128,7 @@ button.button  {
 }
 
 button:hover, button:active    {
-    background: var(--warm-transition-backwards);
+    background: var(--orange);
 }
 
 div.favorites-list  {
@@ -141,12 +140,44 @@ main.columns > section.no-display, main.columns > div.no-display  {
 }
 
 img.icon {
-    height:200px;
-    width:auto;
+    width:30vw;
+    height:auto;
     z-index:1;
     position:absolute;
     bottom:0;
     right:0;
 
+}
+
+@media screen and (max-width:400px) {
+
+    header.columns  {
+        padding:0px;
+    }
+
+    div.welcome-card > h2   {
+        font-size: 15px;
+    }
+    
+    div.welcome-card > p    {
+        font-size: 10px;
+    }
+
+    h1.title    {
+        font-size:30px;
+    }
+
+    h2.title-description    {
+        font-size:15px;
+    }
+
+    h2  {
+        font-size: 15px;
+    }
+
+    p   {
+        font-size: 10px;
+    }
+    
 }
 
