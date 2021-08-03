@@ -140,9 +140,9 @@ main.columns > section.no-display, main.columns > div.no-display  {
 }
 
 img.icon {
-    width:30vw;
+    width:20vw;
     height:auto;
-    z-index:1;
+    z-index:0;
     position:absolute;
     bottom:0;
     right:0;
