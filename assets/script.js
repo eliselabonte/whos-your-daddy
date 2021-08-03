@@ -1,3 +1,12 @@
+let favList = document.querySelector('ul');
+let favButton = document.getElementById('favButton');
+let joke = document.getElementById('jokeDisplay');
+let favArray = localStorage.getItem('favs') ? JSON.parse(localStorage.getItem('favs')) : [];
+let clearButton = document.getElementById('clearButton');
+
+localStorage.setItem('favs', JSON.stringify(favArray));
+const data = JSON.parse(localStorage.getItem('favs'));
+
 const welcomeCard$ = $("#welcomeCard");
 const jokeSection$ = $("#gifAndJoke")
 const jokeButton$ = $("#jokeButton");
@@ -11,6 +20,7 @@ const favList$ = $("#favoritesList");
 // Checks array for contents or creates and empty array.
 let jokeArray = JSON.parse(localStorage.getItem("jokes")) || [];
 let currentJoke = "";
+
 
 function gifAndJokes() {
   // API pull for G rated dad joke GIFs.
@@ -45,7 +55,7 @@ function gifAndJokes() {
 function addToFavList() {
   for (i = 0; i < jokeArray.length; i++) {
     let jokeList = jokeArray[i];
-    favList$.append("<li>" + jokeList + "<li>");
+    favList.append("<li>" + jokeList + "<li>");
   }
 }
 
@@ -57,10 +67,42 @@ jokeButton$.on("click", function (e) {
   favSection$.show()
 });
 
-// Button to store the current joke and add it to the bottom of the favorites list.
+/* Button to store the current joke and add it to the bottom of the favorites list.
 favButton$.on("click", function (e) {
   jokeArray.push(currentJoke);
   localStorage.setItem("jokes", JSON.stringify(jokeArray));
   addToFavList();
 });
+*/
 
+function liAdd(text) {
+  let li = document.createElement('li')
+  li.textContent = text
+  favList.appendChild(li);
+}
+
+
+favButton.addEventListener('click', function (e) {
+  e.preventDefault()
+
+  favArray.push(currentJoke);
+  localStorage.setItem('favs', JSON.stringify(favArray));
+  liAdd(joke.textContent);
+})
+
+clearButton.addEventListener('click', function () {
+  favList.innerHTML = '';
+  localStorage.clear();
+  while (favList.firstChild) {
+    favList.removeChild(ul.firstChild);
+  }
+  favArray = [];
+});
+
+function favHistory() {
+  for (i = 0; i < favArray.length; i++) {
+    liAdd(favArray[i])
+  }
+};
+
+favHistory();
