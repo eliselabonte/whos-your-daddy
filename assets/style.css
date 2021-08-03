@@ -13,8 +13,10 @@
 
 body    {
     height:105vh;
+    width:100vw;
+    min-width: fit-content;
     background: var(--cool-transition);
-    overflow-x: hidden;
+    margin:0;
     padding:5px;
 }
 
@@ -24,12 +26,8 @@ div.welcome-card    {
     padding:0px;
 }
 
-div.welcome-card:hover  {
-    background-color: var(--yellow);
-}
-
 div.welcome-card > h2   {
-    font-size: 30px;
+    font-size: 20px;
     width:100%;
     text-align: center;
     background-color: var(--yellow);
@@ -39,15 +37,14 @@ div.welcome-card > p    {
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: 20px;
+    font-size: 18px;
 }
 
 main.columns    {
-    height:92%;
-    margin-bottom:-0.75rem;
-    /* display: flex;
-    flex-direction: column;
-    align-items: center; */
+    /* margin-bottom:-0.75rem; */
+    display: flex;
+    /* flex-direction: column; */
+    align-content: space-between;
 }
 
 /* header is top layer and unaffected by rest of page */
@@ -55,7 +52,6 @@ header.columns    {
     background: var(--warm-transition);
     padding: 15px;
     z-index: 100;
-
 }
 
 /* this is the only place that head-font is used */
@@ -123,10 +119,12 @@ div.joke-display  {
 button.button  {
     border-radius: 10px;
     border:none;
+    box-shadow:none;
     background: var(--warm-transition);
     font-family: var(--body-font);
     margin-top:5px;
     margin-bottom:10px;
+    z-index:80;
 }
 
 button:hover, button:active    {
@@ -139,5 +137,47 @@ div.favorites-list  {
 
 main.columns > section.no-display, main.columns > div.no-display  {
     display: none;
+}
+
+img.icon {
+    width:30vw;
+    height:auto;
+    z-index:1;
+    position:absolute;
+    bottom:0;
+    right:0;
+
+}
+
+@media screen and (max-width:400px) {
+
+    header.columns  {
+        padding:0px;
+    }
+
+    div.welcome-card > h2   {
+        font-size: 15px;
+    }
+    
+    div.welcome-card > p    {
+        font-size: 10px;
+    }
+
+    h1.title    {
+        font-size:30px;
+    }
+
+    h2.title-description    {
+        font-size:15px;
+    }
+
+    h2  {
+        font-size: 15px;
+    }
+
+    p   {
+        font-size: 10px;
+    }
+    
 }
 
