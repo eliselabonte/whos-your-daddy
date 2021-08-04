@@ -111,9 +111,20 @@ img.random-dad-image    {
 }
 
 div.joke-display  {
+    display: flex;
     background-color: white;
     font-family: var(--body-font);
     width:80%;
+}
+
+#favButton {
+    margin: 0 7px;
+    max-width: 48px;
+}
+
+#jokeDisplay {
+    align-self: center;
+    margin: 0 10px 0 0;
 }
 
 button.button  {
