@@ -150,13 +150,15 @@ main.columns > section.no-display, main.columns > div.no-display  {
     display: none;
 }
 
+.img_container {
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 img.icon {
-    width:20vw;
-    height:auto;
-    z-index:0;
-    position:absolute;
-    bottom:0;
-    right:0;
+ width: 100px;
+ height: 100px;
 
 }
 
