@@ -69,7 +69,7 @@ xbtn class, and then makes it's ID whatever the current joke is. then it adds an
 function liAdd(text) {
   let pullButton = document.createElement('button')
   pullButton.innerHTML = text
-  pullButton.setAttribute("class", "xbtn")
+  pullButton.setAttribute("class", "xbtn button")
   pullButton.setAttribute("id", text)
   favList.appendChild(pullButton);
   
