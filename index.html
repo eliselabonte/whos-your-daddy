@@ -2,38 +2,40 @@
 <html>
 
 <head>
-      <meta charset="UTF-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-      <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
-      <!-- jquery -->
-      <script
-      src="https://code.jquery.com/jquery-3.6.0.min.js"
-      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
-      crossorigin="anonymous"></script>
+    <!-- jquery -->
+    <script
+    src="https://code.jquery.com/jquery-3.6.0.min.js"
+    integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+    crossorigin="anonymous"></script>
 
-      <!-- google fonts -->
-      <link rel="preconnect" href="https://fonts.googleapis.com" />
-      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-      <link href="https://fonts.googleapis.com/css2?family=Nixie+One&family=Tourney:wght@500&display=swap" rel="stylesheet" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Slab:wght@400&display=swap&family=Tourney:wght@500&display=swap" rel="stylesheet" />
 
-      <!-- bulma -->
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
+    <!-- bulma -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css">
 
-      <!-- css -->
-      <link rel="stylesheet" href="./assets/style.css" />
+    <!-- css -->
+    <link rel="stylesheet" href="./assets/style.css" />
 
-      <title>Who's Your Daddy?</title>
+    <title>Who's Your Daddy?</title>
     </head>
 
 
 <body>
     <header class="columns">
-        <figure class="image is-128x128 column is-one-third-desktop image_container">
+        <!-- <figure class="image image_container">
+        </figure> -->
+        <div class="title column is-mobile is-half-tablet">
             <img src="./assets/dad_icon_orange.png" class="icon" />
-        </figure>
-        <h1 class="title column is-mobile is-half-desktop">Who's Your Daddy?</h1>
-        <h2 class="title-description column is-half-desktop">A Dad Joke Generator</h2>
+            <h1 class="title">Who's Your Daddy?</h1>
+        </div>
+        <h2 class="title-description column is one-third-tablet">A Dad Joke Generator</h2>
     </header>
 
 
@@ -42,27 +44,28 @@
 
         <div class="column is-half-tablet is-three-quarters-desktop main-content-container">
             <div id="welcomeCard" class="welcome-card card is-half-mobile is-half">
-                <h2>Welcome to Who's Your Daddy!</h2>
-                <p>Become the most annoying person you know by starting your dad joke collection today!</p>
-                <p>Explore the page to generate a random joke, then add to your favorites list. Save unlimited jokes.
-                    Dominate ice-breakers and ruin friendships.</p>
+                <div class="welcome-card-child">
+                    <h2>Welcome to Who's Your Daddy!</h2>
+                    <p>Become the most annoying person you know by starting your dad joke collection today!</p>
+                    <p>Explore the page to generate a random joke, then add to your favorites list. Save unlimited jokes. Dominate ice-breakers and ruin friendships.</p>
+                </div>
             </div>
 
-            <div id="gifAndJoke" class="gif-and-joke card has-text-centered">
-
+            <div id="gifAndJoke" class="gif-and-joke card">
                 <figure class="image">
                     <img src="" id="gifDisplay" class="random-dad-image" allowFullScreen></img>
                 </figure>
 
                 <div class="joke-display content">
                     <img id="favButton" src="./assets/favIcon.svg" alt="Favorites Icon/Button">
-                    <p id="jokeDisplay"></p>
+                    <p id="jokeDisplay" class="joke-display"></p>
                 </div>
-
-
             </div>
-            <button id="jokeButton" class="button">Generate Cringe</button>
-            <button id="clearButton" class="button">Clear Favorites List</button>
+
+            <div class="button-container">
+                <button id="jokeButton" class="button">Generate Cringe</button>
+                <button id="clearButton" class="button">Clear Favorites List</button>
+            </div>
         </div>
 
 
@@ -75,14 +78,11 @@
 
         </section>
 
-        <img src="./assets/dad_icon_orange.png" class="icon" />
-
     </main>
 
     <footer>
 
     </footer>
-           
 
     <script src="./assets/script.js"></script>
 
