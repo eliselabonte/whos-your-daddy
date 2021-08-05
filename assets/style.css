@@ -8,42 +8,50 @@
     --cool-transition:linear-gradient(rgb(186, 247, 235), rgb(119, 196, 212));
 
     --head-font: 'Tourney', cursive;
-    --body-font: 'Nixie One', cursive;
+    --body-font: 'Josefin Slab', serif;
 }
 
 body    {
-    height:105vh;
+    height:110vh;
     width:100vw;
     min-width: fit-content;
     background: var(--cool-transition);
     margin:0;
     padding:5px;
+    position:absolute;
 }
 
 div.welcome-card    {
     margin-top:30px;
-    background:var(--orange);
     padding:0px;
+    height:100%;
+    background: none;
+    box-shadow: none;
 }
 
-div.welcome-card > h2   {
-    font-size: 20px;
+div.welcome-card-child  {
+    display:flex;
+    flex-direction: column;
+    align-items: flex-start;
+    background-color: var(--orange);
+}
+
+div.welcome-card-child > h2   {
+    font-size: 30px;
     width:100%;
     text-align: center;
     background-color: var(--yellow);
 }
 
-div.welcome-card > p    {
+div.welcome-card-child > p    {
     text-align: center;
     margin-top: 15px;
     margin-bottom: 15px;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 main.columns    {
-    /* margin-bottom:-0.75rem; */
     display: flex;
-    /* flex-direction: column; */
     align-content: space-between;
 }
 
@@ -54,11 +62,22 @@ header.columns    {
     z-index: 100;
 }
 
+img.icon {
+    width:80px;
+    height:auto;
+}
+
+div.title   {
+    display:flex;
+    align-items: center;
+}
+
 /* this is the only place that head-font is used */
-h1.column    {
+h1   {
     font-size:40px;
     font-family: var(--head-font);
-    padding:5px;
+    /* padding:5px; */
+    margin:0px;
 }
 
 /* use body-font for all othere text elements */
@@ -71,7 +90,6 @@ h2, h3, p, .breadcrumb  {
 /* position is fixed so that it can overlap the h1 element slightly */
 h2.title-description  {
     font-size:1.5rem;
-    vertical-align: text-bottom;
     text-align: right;
 }
 
@@ -85,16 +103,19 @@ div.main-content-container  {
     display:flex;
     flex-direction: column;
     align-items: center;
+    justify-content: flex-end;
+    height:80vh;
 }
 
 /* display the gif in this card, remove the shadow provided from Bulma */
-div.gif-and-joke.card.has-text-centered {
+div.gif-and-joke.card {
     display:flex;
     flex-direction:column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     box-shadow: none;
     background: none;
+    max-height:400px;
 }
 
 section {
@@ -102,12 +123,18 @@ section {
 }
 
 figure.image    {
-    width:80%;
+    max-height:100%;
+    overflow:auto;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
 }
-/* make the imported gif the width of the page */
+
+/* make the imported gif a constant height */
 img.random-dad-image    {
-    /* height:400px; */
-    width:100%;
+    height:100%;
+    width:auto;
 }
 
 div.joke-display  {
@@ -115,6 +142,10 @@ div.joke-display  {
     background-color: white;
     font-family: var(--body-font);
     width:80%;
+}
+
+p.joke-display  {
+    font-size: 30px;
 }
 
 #favButton {
@@ -127,6 +158,12 @@ div.joke-display  {
     margin: 0 10px 0 0;
 }
 
+div.button-container  {
+    display:flex;
+    flex-direction:column;
+    justify-content: flex-end;
+}
+
 button.button  {
     border-radius: 10px;
     border:none;
@@ -136,6 +173,8 @@ button.button  {
     margin-top:5px;
     margin-bottom:10px;
     z-index:80;
+    position: relative;
+    font-size:20px;
 }
 
 button:hover, button:active    {
@@ -151,15 +190,9 @@ main.columns > section.no-display, main.columns > div.no-display  {
 }
 
 .img_container {
-    
     display: flex;
     justify-content: center;
     align-items: center;
-}
-img.icon {
- width: 100px;
- height: 100px;
-
 }
 
 @media screen and (max-width:400px) {
@@ -169,27 +202,27 @@ img.icon {
     }
 
     div.welcome-card > h2   {
-        font-size: 15px;
+        font-size: 20px;
     }
     
     div.welcome-card > p    {
-        font-size: 10px;
-    }
-
-    h1.title    {
-        font-size:30px;
-    }
-
-    h2.title-description    {
-        font-size:15px;
-    }
-
-    h2  {
         font-size: 15px;
     }
 
+    h1    {
+        font-size:35px;
+    }
+
+    h2.title-description    {
+        font-size:20px;
+    }
+
+    h2  {
+        font-size: 20px;
+    }
+
     p   {
-        font-size: 10px;
+        font-size: 15px;
     }
     
 }
