@@ -95,19 +95,6 @@ favButton.addEventListener('click', function (e) {
 /*
 when the clear favorites list button is pressed, remove all children from the favorite's list, clear the local storage, and sets the array to nothing
 */
-function liAdd(text) {
-  let li = document.createElement("li");
-  li.textContent = text;
-  favList.appendChild(li);
-}
-
-favButton.addEventListener("click", function (e) {
-  e.preventDefault();
-  favArray.push(currentJoke);
-  localStorage.setItem("favs", JSON.stringify(favArray));
-  liAdd(joke.textContent);
-});
-
 clearButton.addEventListener("click", function () {
   favList.innerHTML = "";
   localStorage.clear();
