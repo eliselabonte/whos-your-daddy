@@ -58,6 +58,7 @@ jokeButton$.on("click", function (e) {
   jokeAPI();
   welcomeCard$.hide();
   jokeSection$.show();
+  favButton.style.display = "inline";
   favSection$.show();
 });
 

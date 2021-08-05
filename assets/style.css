@@ -149,6 +149,8 @@ p.joke-display  {
 }
 
 #favButton {
+    display: none;
+    cursor: pointer;
     margin: 0 7px;
     max-width: 48px;
 }
