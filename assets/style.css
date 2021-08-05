@@ -246,10 +246,3 @@ main.columns > section.no-display, main.columns > div.no-display  {
         max-height:300px;
     }
 };
-
-
-@media screen and (max-width:400px) {
-
-    
-}
-
