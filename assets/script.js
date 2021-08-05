@@ -1,28 +1,27 @@
-let favList = document.querySelector('ul');
-let favButton = document.getElementById('favButton');
-let joke = document.getElementById('jokeDisplay');
-let favArray = localStorage.getItem('favs') ? JSON.parse(localStorage.getItem('favs')) : [];
-let clearButton = document.getElementById('clearButton');
+let favList = document.querySelector("ul");
+let favButton = document.getElementById("favButton");
+let joke = document.getElementById("jokeDisplay");
+let favArray = localStorage.getItem("favs")
+  ? JSON.parse(localStorage.getItem("favs"))
+  : [];
+let clearButton = document.getElementById("clearButton");
 
-localStorage.setItem('favs', JSON.stringify(favArray));
-const data = JSON.parse(localStorage.getItem('favs'));
+localStorage.setItem("favs", JSON.stringify(favArray));
+const data = JSON.parse(localStorage.getItem("favs"));
 
 const welcomeCard$ = $("#welcomeCard");
-const jokeSection$ = $("#gifAndJoke")
+const jokeSection$ = $("#gifAndJoke");
 const jokeButton$ = $("#jokeButton");
 const favSection$ = $("#favorites-section");
 
 const gif$ = $("#gifDisplay");
 const joke$ = $("#jokeDisplay");
-const favButton$ = $("#favButton");
-const favList$ = $("#favoritesList");
 
 // Checks array for contents or creates and empty array.
 let jokeArray = JSON.parse(localStorage.getItem("jokes")) || [];
 let currentJoke = "";
 
-
-function gifAndJokes() {
+function gifAPI() {
   // API pull for G rated dad joke GIFs.
   $.ajax({
     url: "https://api.giphy.com/v1/gifs/random?api_key=IaSI9WvRX5rWEpsJJOZEduVTQGDHxWk6&tag=chuckle&rating=g",
@@ -35,7 +34,9 @@ function gifAndJokes() {
       console.log(error);
     },
   });
+}
 
+function jokeAPI() {
   // API pull for random dad joke.
   $.ajax({
     url: "https://icanhazdadjoke.com/slack",
@@ -51,29 +52,14 @@ function gifAndJokes() {
   });
 }
 
-// Dynamicly add the favorited joke to the bottom of your favorites list.
-function addToFavList() {
-  for (i = 0; i < jokeArray.length; i++) {
-    let jokeList = jokeArray[i];
-    favList.append("<li>" + jokeList + "<li>");
-  }
-}
-
 // Reloads the page, generates joke, toggles html sections disokay.
 jokeButton$.on("click", function (e) {
-  gifAndJokes();
-  welcomeCard$.hide()
-  jokeSection$.show()
-  favSection$.show()
+  gifAPI();
+  jokeAPI();
+  welcomeCard$.hide();
+  jokeSection$.show();
+  favSection$.show();
 });
-
-/* Button to store the current joke and add it to the bottom of the favorites list.
-favButton$.on("click", function (e) {
-  jokeArray.push(currentJoke);
-  localStorage.setItem("jokes", JSON.stringify(jokeArray));
-  addToFavList();
-});
-*/
 
 /* 
 function creates a button then makes the text of the button the text of the current joke, gives it the 
@@ -87,10 +73,6 @@ function liAdd(text) {
   favList.appendChild(pullButton);
   
   pullButton.addEventListener('click', function () {
-    /*
-    alert("FUUUCK")
-     */
-
     let curID = pullButton.id;
     joke.textContent = curID;
     gifAPI();
@@ -109,27 +91,39 @@ favButton.addEventListener('click', function (e) {
   localStorage.setItem('favs', JSON.stringify(favArray));
   liAdd(joke.textContent);
 })
+
 /*
 when the clear favorites list button is pressed, remove all children from the favorite's list, clear the local storage, and sets the array to nothing
 */
+function liAdd(text) {
+  let li = document.createElement("li");
+  li.textContent = text;
+  favList.appendChild(li);
+}
 
-clearButton.addEventListener('click', function () {
-  favList.innerHTML = '';
+favButton.addEventListener("click", function (e) {
+  e.preventDefault();
+  favArray.push(currentJoke);
+  localStorage.setItem("favs", JSON.stringify(favArray));
+  liAdd(joke.textContent);
+});
+
+clearButton.addEventListener("click", function () {
+  favList.innerHTML = "";
   localStorage.clear();
   while (favList.firstChild) {
     favList.removeChild(ul.firstChild);
   }
   favArray = [];
 });
+
 /*
 runs the liAdd funtion on page load for each item in the stored array
 */
 function favHistory() {
   for (i = 0; i < favArray.length; i++) {
-    liAdd(favArray[i])
+    liAdd(favArray[i]);
   }
-};
-
-
+}
 
 favHistory();
