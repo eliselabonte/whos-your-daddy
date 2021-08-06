@@ -53,6 +53,8 @@ div.welcome-card-child > p    {
 main.columns    {
     display: flex;
     align-content: space-between;
+    padding-left:5px;
+    padding-right:5px;
 }
 
 /* header is top layer and unaffected by rest of page */
@@ -195,6 +197,18 @@ main.columns > section.no-display, main.columns > div.no-display  {
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+button.xbtn {
+    font-family: var(--body-font);
+    border:none;
+    font-size:15px;
+    background: none;
+    margin-top:8px;
+}
+
+button.xbtn:hover {
+    color:var(--orange);
 }
 
 @media screen and  (max-width: 768px){
