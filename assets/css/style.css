@@ -11,9 +11,14 @@
     --body-font: 'Josefin Slab', serif;
 }
 
+html    {
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
 body    {
-    height:150vh;
-    width:100vw;
+    height:100%;
+    width:100%;
     min-width: fit-content;
     background: var(--cool-transition);
     margin:0;
@@ -220,6 +225,11 @@ button.xbtn:hover {
 }
 
 @media screen and  (max-width: 768px){
+    body    {
+        height:150vh; 
+        max-width: 100%;
+    }
+
     main.columns    {
         flex-direction: column;
     }
@@ -229,10 +239,28 @@ button.xbtn:hover {
     }
 
     div.main-content-container  {
-        height:90vh;
+        max-width:100%;
     }
 
     figure.image  {
         max-height:300px;
+    }
+
+    img.random-dad-image    {
+        max-height:100%;
+        width:300px;
+    }
+    
+    div.joke-display  {
+        width:300px;
+    }
+    
+    p.joke-display  {
+        font-size: 30px;
+    }
+
+    button.cringe.button   {
+        position: relative;
+        bottom:0px;
     }
 };
