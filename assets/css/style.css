@@ -136,21 +136,44 @@ figure.image    {
 
 div.joke-display  {
     display: flex;
+    flex-direction: column;
     background-color: white;
     font-family: var(--body-font);
     width:400px;
+    justify-content: center;
+    align-items: center;
 }
 
 p.joke-display  {
     font-size: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 30px;
 }
 
 #favButton {
     display: none;
     cursor: pointer;
-    margin: 0 7px;
-    max-width: 48px;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    margin: 10px 10px 10px 10px;
+    padding: 0px;
 }
+#favButton img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 0px;
+}
+
+#favButton p {
+    color: black; 
+}
+
+
 
 #jokeDisplay {
     align-self: center;
