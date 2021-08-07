@@ -13,7 +13,7 @@
 
 body    {
     height:150vh;
-    width:101vw;
+    width:100vw;
     min-width: fit-content;
     background: var(--cool-transition);
     margin:0;
@@ -211,6 +211,7 @@ button.xbtn {
     font-size:15px;
     background: none;
     margin-top:8px;
+    white-space: normal;
 }
 
 button.xbtn:hover {
