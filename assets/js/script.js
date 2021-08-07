@@ -77,6 +77,10 @@ function liAdd(text) {
     let curID = pullButton.id;
     joke.textContent = curID;
     gifAPI();
+    welcomeCard$.hide();
+    jokeSection$.show();
+    favButton.style.display = "inline";
+    favSection$.show();
    });
 }
 
