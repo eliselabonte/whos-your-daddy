@@ -13,7 +13,7 @@
 
 body    {
     height:150vh;
-    width:100vw;
+    width:101vw;
     min-width: fit-content;
     background: var(--cool-transition);
     margin:0;
@@ -55,6 +55,7 @@ main.columns    {
     align-content: space-between;
     padding-left:5px;
     padding-right:5px;
+    height:80%;
 }
 
 /* header is top layer and unaffected by rest of page */
@@ -89,6 +90,11 @@ h2, h3, p, .breadcrumb  {
     white-space: normal;
 }
 
+p   {
+    text-align: center;
+    width:100%;
+}
+
 /* position is fixed so that it can overlap the h1 element slightly */
 h2.title-description  {
     font-size:1.5rem;
@@ -100,13 +106,8 @@ h2.favorites    {
     background-color: var(--orange);
 }
 
-div.main-content-container  {
+section {
     border:1px solid var(--orange);
-    display:flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-end;
-    height:80vh;
 }
 
 /* display the gif in this card, remove the shadow provided from Bulma */
@@ -117,15 +118,16 @@ div.gif-and-joke.card {
     justify-content: flex-end;
     box-shadow: none;
     background: none;
-    max-height:400px;
 }
 
-section {
-    border:1px solid var(--orange);
+/* make the imported gif a constant height */
+img.random-dad-image    {
+    max-height:100%;
+    width:400px;
 }
 
 figure.image    {
-    max-height:100%;
+    max-height:400px;
     overflow:auto;
     display:flex;
     flex-direction: column;
@@ -133,17 +135,11 @@ figure.image    {
     justify-content: flex-end;
 }
 
-/* make the imported gif a constant height */
-img.random-dad-image    {
-    height:100%;
-    width:auto;
-}
-
 div.joke-display  {
     display: flex;
     background-color: white;
     font-family: var(--body-font);
-    width:80%;
+    width:400px;
 }
 
 p.joke-display  {
@@ -162,12 +158,6 @@ p.joke-display  {
     margin: 0 10px 0 0;
 }
 
-div.button-container  {
-    display:flex;
-    flex-direction:column;
-    justify-content: flex-end;
-}
-
 button.button  {
     border-radius: 10px;
     border:none;
@@ -177,26 +167,43 @@ button.button  {
     margin-top:5px;
     margin-bottom:10px;
     z-index:80;
-    position: relative;
     font-size:20px;
+}
+
+div.favorites-list  {
+    padding:5px;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height:98%;
+}
+
+div.main-content-container  {
+    border:1px solid var(--orange);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    height:100%;
+}
+
+button.clear-button     {
+    position: sticky;
+    bottom:15px;
+}
+
+button.cringe.button   {
+    position: sticky;
+    bottom:15px;
 }
 
 button:hover, button:active    {
     background: var(--orange);
 }
 
-div.favorites-list  {
-    padding:5px;
-}
 
 main.columns > section.no-display, main.columns > div.no-display  {
     display: none;
-}
-
-.img_container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
 
 button.xbtn {
@@ -209,6 +216,7 @@ button.xbtn {
 
 button.xbtn:hover {
     color:var(--orange);
+    cursor:pointer;
 }
 
 @media screen and  (max-width: 768px){
